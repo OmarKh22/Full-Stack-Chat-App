@@ -1,9 +1,10 @@
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '@/components/ScreenWrapper'
 import Typo from '@/components/Typo'
 import { colors, radius, spacingX, spacingY } from '@/constants/theme'
 import BackButton from '@/components/BackButton'
+import Input from '@/components/Input'
 
 const Register = () => {
   return (
@@ -12,6 +13,25 @@ const Register = () => {
       <View style={styles.container}>
         <View style={styles.header}>
             <BackButton />
+            <Typo color={colors.white} size={17}>
+              Need Some Help?
+            </Typo>
+        </View>
+        <View style={styles.content}>
+          <ScrollView contentContainerStyle={styles.form}
+            showsVerticalScrollIndicator={false}
+          >
+            <View style={{gap: spacingY._10 , marginBottom: spacingY._15}}>
+              <Typo size={24} fontWeight={"600"}>
+                Getting Started
+              </Typo>
+              <Typo color={colors.neutral600}>
+                Create an Account
+              </Typo>
+            </View>
+
+            <Input />
+          </ScrollView>
         </View>
       </View>
     </ScreenWrapper>

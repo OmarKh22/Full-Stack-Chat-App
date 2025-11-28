@@ -4,6 +4,7 @@ import { colors } from '@/constants/theme'
 import { BackButtonProps } from '@/types'
 import { useRouter } from 'expo-router'
 import { CaretLeft } from 'phosphor-react-native'
+import { verticalScale } from '@/utils/styling'
 
 const BackButton = ({
     style,
@@ -15,7 +16,7 @@ const BackButton = ({
 
   return (
     <TouchableOpacity onPress={()=> router.back()} style={[styles.button , style]}>
-        <CaretLeft size={40} />
+        <CaretLeft size={verticalScale(iconSize)} color={color} weight='bold' />
       <Text>BackButton</Text>
     </TouchableOpacity>
   )
