@@ -11,14 +11,14 @@ const Input = (props: InputProps) => {
         style={[
             styles.container,
             props.containerStyle && props.containerStyle,
-            // isFocused && styles.primaryBorder
+            isFocused && styles.primaryBorder
         ]}
     >
         {props.icon && props.icon}
       <TextInput 
        onFocus={()=>setIsFocused(true)}
        onBlur={()=>setIsFocused(false)}
-    //    style={styles.input , props.inputStyle}
+       style={[styles.input , props.inputStyle]}
        placeholderTextColor={colors.neutral400}
        ref={props.inputRef && props.inputRef}
        {...props}
@@ -42,5 +42,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacingX._15,
     backgroundColor: colors.neutral100,
     gap: spacingX._10
+  },
+  primaryBorder:{
+    borderColor: colors.primary
+  },
+  input: {
+    flex: 1,
+    color: colors.text,
+    fontSize: verticalScale(14)
   }
 })
